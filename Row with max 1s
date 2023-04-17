@@ -1,0 +1,28 @@
+class Solution {
+    int rowWithMax1s(int arr[][], int n, int m) {
+        // code here
+        int count=0;
+        for(int i=0;i<n;i++){
+            int sum=0;
+            for(int j=0;j<m;j++){
+                sum+=arr[i][j];
+                count=Math.max(count,sum);
+            }
+        }
+        int index=0;
+        for(int i=0;i<n;i++){
+            int sum=0;
+            for(int j=0;j<m;j++){
+                sum+=arr[i][j];
+            }
+            if(count==sum){
+                index=i;
+                break;
+            }
+        }
+        if(index==0){
+            return -1;
+        }
+        return index;
+    }
+}
