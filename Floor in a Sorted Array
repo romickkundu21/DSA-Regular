@@ -1,0 +1,23 @@
+class Solution{
+    
+    // Function to find floor of x
+    // arr: input array
+    // n is the size of array
+    static int findFloor(long arr[], int n, long x)
+    {
+        if(arr[n-1]<=x){
+            return n-1;
+        }
+        if(arr[0]>x){
+            return -1;
+        }
+        for(int i=1;i<n;i++){
+            if(arr[i]>x){
+                return i-1;
+            }
+        }
+        
+        return -1;
+    }
+    
+}
