@@ -1,0 +1,14 @@
+class Solution {
+    static boolean searchKey(int n, Node head, int key) {
+        // Code here
+        Node temp=head;
+        while(temp!=null && temp.next!=null){
+            if(temp.data==key){
+                return true;
+            }
+            temp=temp.next;
+        }
+        return false;
+        
+    }
+}
