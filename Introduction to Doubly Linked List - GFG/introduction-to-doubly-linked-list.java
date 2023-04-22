@@ -51,7 +51,7 @@ class Solution {
         Node temp=head;
         for(int i=1;i<arr.length;i++){
             temp.next=new Node(arr[i]);
-            temp.prev=new Node(arr[i-1]);
+            temp.prev=temp;
             temp=temp.next;
         }
         return head;
