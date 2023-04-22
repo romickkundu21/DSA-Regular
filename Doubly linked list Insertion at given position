@@ -10,11 +10,12 @@ class GfG
 		    count++;
 		    if(count==pos){
 		        Node node=new Node(data);
-		        temp.next=node;
 		        node.next=temp.next;
+		        temp.next=node;
 		        node.prev=temp;
+		    }else{
+		        temp=temp.next;
 		    }
-		    temp=temp.next;
 		}
 	}
 }
