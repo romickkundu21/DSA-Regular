@@ -1,0 +1,16 @@
+class Solution{
+    Node removeDuplicates(Node head){
+        // Code Here.
+        Node curr=head, back=head;
+        while(curr!=null){
+            if(curr.data!=back.data){
+                back.next=curr;
+                curr.prev=back;
+                back=curr;
+            }
+            curr=curr.next;
+        }
+        back.next=null;
+        return head;
+    }
+}
