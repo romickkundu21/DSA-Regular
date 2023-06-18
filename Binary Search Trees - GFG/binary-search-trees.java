@@ -31,12 +31,12 @@ class GFG {
 class Solution {
     static boolean isBSTTraversal(int nums[]) {
     // code here
-    for(int i=1;i<nums.length;i++){
-        if(nums[i-1]>=nums[i]){
-            return false;
+        for(int i=1;i<nums.length;i++){
+            if(nums[i-1]>=nums[i]){
+                return false;
+            }
         }
-    }
-    return true;
+        return true;
   }
 }
      
