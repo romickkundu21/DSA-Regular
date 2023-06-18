@@ -19,9 +19,8 @@ class Solution {
         if(root==null)return res;
         Queue<TreeNode> q=new LinkedList<>();
         q.offer(root);
-        double sum=0;
         while(!q.isEmpty()){
-            sum=0;
+            double sum=0;
             int size=q.size();
             for(int i=0;i<size;i++){
                 TreeNode curr=q.poll();
