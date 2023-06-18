@@ -17,13 +17,13 @@ class Solution {
     Set<Integer> res=new HashSet<>();
     public boolean findTarget(TreeNode root, int k) {
         if(root==null)return false;
-        if(findTarget(root.right,k)==true){
+        if(findTarget(root.left,k)){
             return true;
         }
         if(res.contains(k-root.val)){
             return true;
         }
         res.add(root.val);
-        return findTarget(root.left,k);
+        return findTarget(root.right,k);
     }
 }
