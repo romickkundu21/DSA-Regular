@@ -113,8 +113,6 @@ class GfG {
 
 // } Driver Code Ends
 
-
-//User function Template for Java
 class Pair{
     int hd;
     Node node;
@@ -123,6 +121,8 @@ class Pair{
         this.node=node;
     }
 }
+//User function Template for Java
+
 
 class Solution
 {
@@ -132,12 +132,10 @@ class Solution
         // Code here
         Queue<Pair> q=new ArrayDeque<>();
         Map<Integer,Integer> map=new TreeMap<>();
-        
         q.add(new Pair(0,root));
         while(!q.isEmpty()){
             Pair curr=q.poll();
             map.put(curr.hd,curr.node.data);
-            
             if(curr.node.left!=null){
                 q.add(new Pair(curr.hd-1,curr.node.left));
             }
@@ -145,7 +143,7 @@ class Solution
                 q.add(new Pair(curr.hd+1,curr.node.right));
             }
         }
-        ArrayList<Integer> res=new ArrayList<Integer>();
+        ArrayList<Integer> res=new ArrayList<>();
         for(Map.Entry<Integer,Integer> entry: map.entrySet()){
             res.add(entry.getValue());
         }
