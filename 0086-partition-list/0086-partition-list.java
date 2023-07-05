@@ -10,11 +10,10 @@
  */
 class Solution {
     public ListNode partition(ListNode head, int x) {
-        ListNode before=new ListNode();
+        ListNode before=new ListNode(0);
         ListNode temp1=before;
-        ListNode after=new ListNode();
+        ListNode after=new ListNode(0);
         ListNode temp2=after;
-
         while(head!=null){
             if(head.val<x){
                 temp1.next=head;
@@ -28,6 +27,5 @@ class Solution {
         temp2.next=null;
         temp1.next=after.next;
         return before.next;
-        
     }
 }
