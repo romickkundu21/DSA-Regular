@@ -123,17 +123,16 @@ class Solution
     static ArrayList <Integer> verticalOrder(Node root)
     {
         Queue<Pair> q=new ArrayDeque<>();
-        Map<Integer,ArrayList <Integer>> map=new TreeMap<>();
-        
+        Map<Integer,ArrayList<Integer>> map=new TreeMap<>();
         q.add(new Pair(0,root));
         while(!q.isEmpty()){
             Pair curr=q.poll();
             if(map.containsKey(curr.hd)){
                 map.get(curr.hd).add(curr.node.data);
             }else{
-                ArrayList<Integer> temp=new ArrayList<>();
-                temp.add(curr.node.data);
-                map.put(curr.hd,temp);
+                ArrayList<Integer> arr=new ArrayList<>();
+                arr.add(curr.node.data);
+                map.put(curr.hd,arr);
             }
             if(curr.node.left!=null){
                 q.add(new Pair(curr.hd-1,curr.node.left));
@@ -142,10 +141,11 @@ class Solution
                 q.add(new Pair(curr.hd+1,curr.node.right));
             }
         }
-        ArrayList<Integer> res=new ArrayList<Integer>();
-        for(Map.Entry<Integer,ArrayList <Integer>> entry: map.entrySet()){
+        ArrayList<Integer> res=new ArrayList<>();
+        for(Map.Entry<Integer,ArrayList<Integer>> entry:map.entrySet()){
             res.addAll(entry.getValue());
         }
+
         return res;
     }
 }
